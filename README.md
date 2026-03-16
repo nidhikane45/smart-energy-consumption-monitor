@@ -27,14 +27,14 @@ Display energy usage statistics
 
 ## Team Members
 
-Name – Roll Number
-Name – Roll Number
-Name – Roll Number
-Name – Roll Number
+Nidhi Kane – 1012411159
+Neeraj Ketkar – 1012411173
+Aryan Metkar – 1012411178
+Mihir Pendse – 1012411187
 
 ## Task Distribution
 
-Member 1 – Hash Table implementation for appliance data storage
-Member 2 – Heap implementation for finding highest energy consumption
-Member 3 – Tree implementation for historical data storage
-Member 4 – Integration of modules and testing
+Nidhi Kane  – Hash Table implementation for appliance data storage
+Neeraj Ketkar  – Heap implementation for finding highest energy consumption
+Aryan Metkar – Tree implementation for historical data storage
+Mihir Pendse – Integration of modules and testing
