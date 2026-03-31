@@ -18,11 +18,5 @@ public class Appliance {
         return name + " | Power: " + power + "W | Hours: " + hours + " | Energy: " + energy;
     }
 
-    public static void main(String[] args) {
-        Appliance fridge = new Appliance("Fridge", 200, 24);
-        Appliance ac = new Appliance("AC", 1500, 8);
-        
-        System.out.println(fridge);  // Uses your toString()!
-        System.out.println(ac);
-    }
+    
 }
