@@ -10,7 +10,29 @@ public class HashTableApplianceStorage {
         table = new Appliance[size];
     }
 
+    private int hash(String key) {
+        int sum = 0;
+        for (int i = 0; i < key.length(); i++) {
+            sum += key.charAt(i);
+        }
+        return sum % size;
+    }
+    
     public void add(String n, int p, int h) {
-        //TO DO - implement hash table, linear probing
+        Appliance a = new Appliance(n, p, h);
+
+        int index = hash(n);
+
+        while (table[index] != null) {
+            index = (index + 1) % size;
+        } table[index] = a;
+    }
+
+    public void display() {
+        for (int i = 0; i < size; i++) {
+            if (table[i] != null) {
+                System.out.println(table[i]);
+            }
+        }
     }
 }
