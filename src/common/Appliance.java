@@ -13,6 +13,14 @@ public class Appliance {
         this.energy = power * hours;
     }
 
+    public int getEnergy() {
+        return power * hours;
+    }
+
+    public String getName() {
+        return name;
+    }
+    
     @Override
     public String toString() {
         return name + " | Power: " + power + "W | Hours: " + hours + " | Energy: " + energy;

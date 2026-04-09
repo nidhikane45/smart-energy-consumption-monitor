@@ -35,4 +35,38 @@ public class HashTableApplianceStorage {
             }
         }
     }
+
+    public String getAllData() {
+        String result = "";
+        for (int i = 0; i < size; i++) {
+            if (table[i] != null) {
+                result += table[i].toString() + "\n";
+            }
+        }
+        return result;
+    }
+
+    public int getTotalEnergy() {
+        int total = 0;
+        for (int i = 0; i < size; i++) {
+            if (table[i] != null) {
+                total += table[i].energy;
+            }
+        }
+        return total;
+    }
+
+    public Appliance search(String name) {
+        int index = hash(name);
+        int start = index;
+
+        while (table[index] != null) {
+            if (table[index].name.equals(name)) {
+                return table[index];
+            }
+            index = (index + 1) % size;
+            if (index == start) break;
+        }
+        return null;
+    }
 }
