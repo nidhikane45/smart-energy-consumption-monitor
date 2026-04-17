@@ -23,8 +23,14 @@ public class HashTableApplianceStorage {
 
         int index = hash(n);
 
+        int start = index;
         while (table[index] != null) {
             index = (index + 1) % size;
+
+            if (index == start) {
+                System.out.println("Hash Table is full!");
+                return;
+            }
         } table[index] = a;
     }
 
@@ -50,7 +56,7 @@ public class HashTableApplianceStorage {
         int total = 0;
         for (int i = 0; i < size; i++) {
             if (table[i] != null) {
-                total += table[i].energy;
+                total += table[i].getEnergy();
             }
         }
         return total;
@@ -61,7 +67,7 @@ public class HashTableApplianceStorage {
         int start = index;
 
         while (table[index] != null) {
-            if (table[index].name.equals(name)) {
+            if (table[index].getName().equalsIgnoreCase(name)) {
                 return table[index];
             }
             index = (index + 1) % size;

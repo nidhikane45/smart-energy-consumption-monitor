@@ -1,10 +1,10 @@
 package common;
 
 public class Appliance {
-    public String name;
+    private String name;
     public int power;
     public int hours;
-    public int energy;
+    private int energy;
 
     public Appliance(String name, int power, int hours) {
         this.name = name;
@@ -14,7 +14,7 @@ public class Appliance {
     }
 
     public int getEnergy() {
-        return power * hours;
+        return energy;
     }
 
     public String getName() {
