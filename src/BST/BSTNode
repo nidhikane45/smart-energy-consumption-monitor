@@ -1,0 +1,50 @@
+package bst;
+
+class BSTNode {
+    String date;
+    int energy;
+    BSTNode left, right;
+
+    public BSTNode(String date, int energy) {
+        this.date = date;
+        this.energy = energy;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+public class EnergyBST {
+    BSTNode root;
+
+    // Simple insert
+    public void insert(String date, int energy) {
+        root = insertRec(root, date, energy);
+    }
+
+    private BSTNode insertRec(BSTNode root, String date, int energy) {
+        if (root == null) {
+            return new BSTNode(date, energy);
+        }
+
+        if (date.compareTo(root.date) < 0) {
+            root.left = insertRec(root.left, date, energy);
+        } else {
+            root.right = insertRec(root.right, date, energy);
+        }
+
+        return root;
+    }
+
+    // Return history as String (for GUI)
+    public String getHistory() {
+        return inorderRec(root);
+    }
+
+    private String inorderRec(BSTNode root) {
+        if (root == null) return "";
+
+        return inorderRec(root.left)
+                + root.date + " -> " + root.energy + "\n"
+                + inorderRec(root.right);
+    }
+}
