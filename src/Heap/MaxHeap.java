@@ -11,11 +11,16 @@ public class MaxHeap {
     }
 
     public void insert(Appliance a) {
+        if (size == heap.length) {
+            System.out.println("Heap is full!");
+            return;
+        }
+
         heap[size] = a;
         int i = size;
         size++;
 
-        while (i > 0 && heap[i].energy > heap[(i - 1) / 2].energy) {
+        while (i > 0 && heap[i].getEnergy() > heap[(i - 1) / 2].getEnergy()) {
             Appliance temp = heap[i];
             heap[i] = heap[(i - 1) / 2];
             heap[(i - 1) / 2] = temp;
