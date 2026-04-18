@@ -1,4 +1,4 @@
-
+package bst;
 
 class BSTNode {
     String date;
@@ -16,7 +16,7 @@ class BSTNode {
 public class EnergyBST {
     BSTNode root;
 
-    // Simple insert
+    
     public void insert(String date, int energy) {
         root = insertRec(root, date, energy);
     }
@@ -35,7 +35,7 @@ public class EnergyBST {
         return root;
     }
 
-    // Return history as String (for GUI)
+    
     public String getHistory() {
         return inorderRec(root);
     }
