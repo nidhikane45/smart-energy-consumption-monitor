@@ -1,4 +1,4 @@
-package bst;
+
 
 class BSTNode {
     String date;
